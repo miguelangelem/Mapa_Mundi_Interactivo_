@@ -1,0 +1,86 @@
+:root {
+    --parchment: #f4e4bc;
+    --accent: #8b4513;
+}
+
+body, html {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #2c3e50;
+}
+
+/* UI Superior */
+.game-ui {
+    position: absolute; top: 10px; left: 10px; z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px; border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Contenedor del Mapa */
+#viewport {
+    width: 100vw; height: 100vh;
+    cursor: grab;
+}
+
+#map-container {
+    position: relative;
+    display: inline-block;
+}
+
+#map-image {
+    display: block;
+    max-width: none; /* Permitir tamaño original */
+}
+
+/* Marcadores */
+.marker {
+    position: absolute;
+    width: 40px; height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid gold;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    animation: bounce 2s infinite;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translate(-50%, -50%) translateY(0);}
+    40% {transform: translate(-50%, -50%) translateY(-10px);}
+    60% {transform: translate(-50%, -50%) translateY(-5px);}
+}
+
+/* Modal Estilo Pergamino */
+.modal {
+    position: fixed; right: -400px; top: 0;
+    width: 350px; height: 100%;
+    background: var(--parchment);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    padding: 40px 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    border-left: 8px solid var(--accent);
+}
+
+.modal.active { right: 0; }
+
+.modal-content { color: #333; }
+
+#item-img { width: 100%; border-radius: 5px; border: 3px solid var(--accent); }
+
+.btn-more {
+    display: inline-block; margin-top: 20px;
+    padding: 10px 20px; background: var(--accent);
+    color: white; text-decoration: none; border-radius: 5px;
+}
+
+#close-modal {
+    position: absolute; top: 10px; left: 10px;
+    font-size: 30px; border: none; background: none; cursor: pointer;
+}
