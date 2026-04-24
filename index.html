@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Atlas Mundial Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+
+
+
+<body>
+    <header class="game-ui">
+        <h1>Explorador del Mundo</h1>
+        <div class="stats">
+            <span>Objetos: <strong id="score">0</strong></span>
+            <div id="mission-panel">Misión: Encuentra un animal en Norteamérica</div>
+        </div>
+        <select id="region-selector">
+            <option value="fondo1.jpg">América del Norte</option>
+            <option value="fondo2.jpg">América Latina & Caribe</option>
+            <option value="fondo3.jpg">América del Sur (Sur)</option>
+            <option value="fondo4.jpg">Europa & Medio Oriente</option>
+            <option value="fondo5.jpg">África</option>
+            <option value="fondo6.jpg">Asia (India/Arabia)</option>
+            <option value="fondo7.jpg">Asia Oriental</option>
+            <option value="fondo8.jpg">Oceanía</option>
+        </select>
+    </header>
+
+    <main id="viewport">
+        <div id="map-container">
+            <img src="fondo1.jpg" id="map-image" alt="Mapa Regional">
+            <div id="markers-layer"></div>
+        </div>
+    </main>
+
+    <div id="info-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal">&times;</button>
+            <img id="item-img" src="" alt="">
+            <h2 id="item-title">Título</h2>
+            <p id="item-desc">Descripción aquí...</p>
+            <a id="item-link" href="#" target="_blank" class="btn-more">Saber más</a>
+        </div>
+    </div>
+
+    <script src="JavaScripts.js"></script>
+
+
+</body>
+</html>
